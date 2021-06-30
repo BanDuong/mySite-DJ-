@@ -1,1 +1,16 @@
-ECHO is on.
+FROM python:3.9
+
+ENV PYTHONUNBUFFERED=1
+
+WORKDIR /code
+
+COPY requirements.txt /code/
+
+RUN pip install -r requirements.txt
+
+COPY . /code/
+
+EXPOSE 80
+
+CMD python manage.py runserver
+#CMD exec uwsgi --http :8888 --module config.wsgi
