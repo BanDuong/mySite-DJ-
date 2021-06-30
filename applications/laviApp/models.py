@@ -4,6 +4,7 @@ from django.utils import timezone
 # Create your models here.
 
 class LaviType(models.Model):
+    band = models.CharField(max_length=100,null=False,blank=False)
     name = models.CharField(max_length=100,null=False,blank=False)
     color = models.CharField(max_length=100,default="white")
     created_at = models.DateTimeField(timezone.now())
