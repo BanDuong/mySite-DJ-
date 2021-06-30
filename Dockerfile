@@ -13,4 +13,4 @@ COPY . /code/
 EXPOSE 80
 
 CMD python manage.py runserver
-#CMD exec uwsgi --http :8888 --module config.wsgi
+#CMD exec uwsgi --http :80 --module config.wsgi
