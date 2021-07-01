@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>list</title>
+</head>
+<body>
+    <ul>
+        {% for lis in list %}
+            <li>{{ lis.name }}</li>
+        {% endfor %}
+        {% if is_paginated %}
+            <nav>
+                <ul>
+                    {% if page_obj.has_previous %}
+                        <a href="?page={{ page_obj.previous_page_number }}">&laquo;PRE</a>
+                    {% endif %}
+                    {% if page_obj.has_next %}
+                        <a href="?page={{ page_obj.next_page_number }}"> NEXT &raquo;</a>
+                    {% endif %}
+                </ul>
+            </nav>
+        {% endif %}
+    </ul>
+</body>
+</html>
